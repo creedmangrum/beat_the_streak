@@ -7,12 +7,12 @@ import ipdb
 
 today = datetime.datetime.utcnow()
 month = today.month
-day = today.day
+day = today.day - 1
 year = today.year
 
-batting_directory = 'steamer_ros/' + str(month) + str(day-1) + str(year) + '/'
+batting_directory = 'steamer_ros/' + str(month) + str(day) + str(year) + '/'
 pitching_directory = 'steamer_ros/' + str(month) + str(day) + str(year) + '/'
-batting_filename = batting_directory + 'steamer_ros_batting_updated_hits_' + str(month) + str(day-1) + str(year) + '.csv'
+batting_filename = batting_directory + 'steamer_ros_batting_updated_hits_' + str(month) + str(day) + str(year) + '.csv'
 probables_filename = pitching_directory + 'steamer_ros_pitching_probables_' + str(month) + str(day) + str(year) + '.csv'
 output_filename = batting_directory + 'steamer_ros_merged_' + str(month) + str(day) + str(year) + '.csv'
 output_file = open(output_filename, 'wb')

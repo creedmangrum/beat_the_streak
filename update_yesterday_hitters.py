@@ -12,7 +12,7 @@ year = today.year
 
 directory = 'steamer_ros/' + str(month) + str(day) + str(year) + '/'
 filename = directory + 'steamer_ros_batting_' + str(month) + str(day) + str(year) + '.csv'
-output_filename = directory + 'steamer_row_batting_updated_hits_' + str(month) + str(day) + str(year) + '.csv'
+output_filename = directory + 'steamer_ros_batting_updated_hits_' + str(month) + str(day) + str(year) + '.csv'
 output_file = open(output_filename, 'wb')
 output_writer = csv.writer(output_file)
 
