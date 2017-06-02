@@ -17,7 +17,16 @@ output_file = open(output_filename, 'wb')
 output_writer = csv.writer(output_file)
 
 todays_games = mlbgame.day(year, month, day)
-game_probables = [[game.p_pitcher_away, game.p_pitcher_home] for game in todays_games]
+game_probables = []
+for game in todays_games:
+	this_game_probables = []
+	if 'p_pitcher_away' in dir(game):
+		this_game_probables.append(game.p_pitcher_away)
+	if 'p_pitcher_home' in dir(game):
+		this_game_probables.append(game.p_pitcher_home)
+	game_probables.append(this_game_probables)
+
+# game_probables = [[game.p_pitcher_away, game.p_pitcher_home] for game in todays_games]
 probables = [pitcher for game in game_probables for pitcher in game] 
 
 with open(filename) as csvfile:

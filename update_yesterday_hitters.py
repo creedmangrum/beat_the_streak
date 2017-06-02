@@ -8,6 +8,8 @@ import ipdb
 today = datetime.datetime.utcnow()
 month = today.month
 day = today.day - 1
+# month = 4
+# day = 30
 year = today.year
 
 directory = 'steamer_ros/' + str(month) + str(day) + str(year) + '/'
